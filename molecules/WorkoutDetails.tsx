@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { Heading } from "../atoms";
 import { Flex, Box } from "../grid";
 import { TWorkout } from "../data/Workout";
-import formatDate from '../transformers/formatDate';
+import formatDate from "../transformers/formatDate";
 
 type TWorkoutDetailsProps = {
   id: string;
 };
 
 export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
-  const [workoutDetails, setWorkoutDetails] = useState<TWorkout>();
+  const [workoutDetails, setWorkoutDetails] = useState<TWorkout | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -53,10 +53,9 @@ export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
         <Box flexBasis="800px">
           <Flex direction="column">
             <Box alignSelf="start">
-              <Heading
-                level={3}
-                margin="0"
-              >{`Start date: ${formatDate(workoutDetails.startDate)}`}</Heading>
+              <Heading level={3} margin="0">{`Start date: ${formatDate(
+                workoutDetails.startDate
+              )}`}</Heading>
             </Box>
 
             <Box alignSelf="start">
