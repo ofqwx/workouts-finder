@@ -36,7 +36,9 @@ export default function WorkoutsList({ loading, data }: TWorkoutsListProps) {
         </CardList>
 
         <Box>
-          <Pagination pagination={pagination} />
+          {pagination.totalItems > 20 ? (
+            <Pagination pagination={pagination} />
+          ) : null}
         </Box>
       </Flex>
     );
