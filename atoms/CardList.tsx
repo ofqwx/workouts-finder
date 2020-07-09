@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Flex, Box } from "../grid";
-import {Node} from 'react';
+import { ReactNode } from "react";
 
 const StyledBox = styled(Box)`
   max-width: 800px;
@@ -13,9 +13,9 @@ const StyledBox = styled(Box)`
 
 type TCardListProps = {
   children: ReactNode;
-}
+};
 
-export default function CardList({children}: TCardListProps) {
+export default function CardList({ children }: TCardListProps) {
   return (
     <Flex alignItems="center" justifyContent="center" wrap="wrap">
       <StyledBox>{children}</StyledBox>

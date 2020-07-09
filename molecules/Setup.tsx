@@ -1,4 +1,4 @@
-import { Fragment, Node } from "react";
+import { Fragment, ReactNode } from "react";
 import AppStyles from "./AppStyles";
 
 type TSetupProps = {
