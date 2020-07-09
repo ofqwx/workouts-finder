@@ -29,8 +29,14 @@ export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
     getWorkoutDetails();
   }, [id]);
 
-  if (loading) {
-    return <p>loading...</p>;
+  if (loading || !workoutDetails) {
+    return (
+      <Flex direction="column">
+        <Box alignSelf="center">
+          <Heading level={2}>loading...</Heading>
+        </Box>
+      </Flex>
+    );
   }
 
   return (
