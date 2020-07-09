@@ -1,0 +1,22 @@
+import { WorkoutDetails } from "../../molecules";
+import Layout from "../../layouts/Layout";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function () {
+  const router = useRouter();
+  const { id, referrer } = router.query;
+
+  return (
+    <Layout
+      title="Workout detail"
+      topBarLinks={
+        <Link href={referrer ?? "/"}>
+          <a>Workouts</a>
+        </Link>
+      }
+    >
+      <WorkoutDetails id={id} />
+    </Layout>
+  );
+}
