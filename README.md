@@ -10,7 +10,7 @@ You can take a look at the demo here: https://workouts-finder.vercel.app/
 
 ### Running locally
 
-By default this project will try to use a mongodb database from [mongo lab](https://mlab.com/), you can create one for free for development purpuse. So make sure you have your `.env.local` with the next data:
+By default this project will try to use a mongodb database from [mongo lab](https://mlab.com/), you can create one for free for development purpuse. So make sure you have an `.env.local` file in the root of the project with the following data:
 ```
 DB_USERNAME=<your_db_username_here>
 DB_PASSWORD=<your_password_here>
