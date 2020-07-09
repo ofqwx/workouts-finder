@@ -5,4 +5,4 @@ export { default as Setup } from "./Setup";
 export { default as WourkoutsFinder } from "./WourkoutsFinder";
 export { default as WorkoutsList } from "./WorkoutsList";
 export { default as Filters } from "./Filters";
-export { default as WorkoutDetails } from "./WorkoutDetails.tsx";
+export { default as WorkoutDetails } from "./WorkoutDetails";

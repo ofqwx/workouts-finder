@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Heading } from "../atoms";
 import { Flex, Box } from "../grid";
+import { TWorkout } from "../data/Workout";
 
 type TWorkoutDetailsProps = {
   id: string;
 };
 
 export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
-  const [workoutDetails, setWorkoutDetails] = useState({});
+  const [workoutDetails, setWorkoutDetails] = useState<TWorkout>();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -35,10 +36,10 @@ export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
   return (
     <Flex direction="column">
       <Box alignSelf="center">
-        <Heading level={1} style={{ margin: 0 }}>
+        <Heading level={1} margin="0">
           {workoutDetails.name}{" "}
           <small>{`cat: ${workoutDetails.category}`}</small>
-        </Heading>  
+        </Heading>
       </Box>
 
       <Flex justifyContent="center">
@@ -47,7 +48,7 @@ export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
             <Box alignSelf="start">
               <Heading
                 level={3}
-                style={{ margin: 0 }}
+                margin="0"
               >{`Start date: ${workoutDetails.startDate}`}</Heading>
             </Box>
 

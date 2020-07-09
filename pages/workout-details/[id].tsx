@@ -11,12 +11,12 @@ export default function () {
     <Layout
       title="Workout detail"
       topBarLinks={
-        <Link href={referrer ?? "/"}>
+        <Link href={String(referrer) ?? "/"}>
           <a>Workouts</a>
         </Link>
       }
     >
-      <WorkoutDetails id={id} />
+      <WorkoutDetails id={String(id)} />
     </Layout>
   );
 }

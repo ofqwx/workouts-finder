@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function workoutDetails(
   req: NextApiRequest,
   res: NextApiResponse
-): void {
+): Promise<void> {
   try {
     const dataSource = new DataSource();
     await dataSource.connect();
@@ -13,7 +13,7 @@ export default async function workoutDetails(
     const workout = new Workout();
 
     const { query } = req;
-    const workoutDetail = await workout.getWorkoutDetails(query.id);
+    const workoutDetail = await workout.getWorkoutDetails(String(query.id));
 
     res.status(200).json(workoutDetail);
 

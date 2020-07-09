@@ -9,6 +9,7 @@ export const workoutSchema = new mongoose.Schema({
 });
 
 export type TWorkout = {
+  _id: string;
   name: string;
   description: string;
   startDate: string;
@@ -60,7 +61,7 @@ export default class Workout {
     const skips = pageSize * (Number(page) - 1);
 
     try {
-      const filters = {};
+      const filters: Record<string, unknown> | TFilters = {};
 
       if (categories) {
         const categoriesArray = categories.split(",");

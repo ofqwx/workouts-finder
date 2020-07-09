@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import { Heading } from "../atoms";
-import {Filters} from '../molecules';
+import { Filters } from "../molecules";
 import { Flex, Box } from "../grid";
 import { useRouter } from "next/router";
 import createQueryString from "../transformers/createQueryString";
 import { WorkoutsList } from ".";
 
 export default function WourkoutsFinder() {
-  const [workoutsListData, setWorkoutsListData] = useState({
-    workouts: [],
-    pagination: {},
-  });
+  const [workoutsListData, setWorkoutsListData] = useState();
   const [loading, setLoading] = useState(false);
   const { query } = useRouter();
 
@@ -43,22 +40,18 @@ export default function WourkoutsFinder() {
             <Heading level={1}>Find the perfect workout for you!</Heading>
           </Box>
 
-          <SearchBar loading={loading && workoutsListData.workouts?.length} />
-          
-          <WorkoutsList loading={loading} data={workoutsListData} />
+          <SearchBar
+            loading={loading && Boolean(workoutsListData)}
+          />
 
+          <WorkoutsList loading={loading} data={workoutsListData} />
         </Flex>
       </Box>
     </Flex>
   );
 }
 
-
-type TSearchBarProps = {
-  loading: boolean
-}
-
-function SearchBar({loading}: TSearchBarProps) {
+function SearchBar({ loading }) {
   const router = useRouter();
 
   function onApplyFilters(filters) {

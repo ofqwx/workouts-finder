@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { Flex, Box } from "../grid";
-import { DatePicker} from "../atoms";
-import formatDate from '../transformers/formatDate';
+import { DatePicker } from "../atoms";
+import formatDate from "../transformers/formatDate";
 
 const Wrapper = styled.div`
   select {
@@ -21,7 +21,7 @@ const SubmitButton = styled.button`
 `;
 
 type TFilters = {
-  category: string;
+  categories: string;
   startDate: string;
 };
 
@@ -32,7 +32,7 @@ type TFiltersProps = {
 
 export default function Filters({ loading, onApplyFilters }: TFiltersProps) {
   const { query } = useRouter();
-  const [startDate, setStartDate] = useState();
+  const [startDate, setStartDate] = useState<string>();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const categories = ["c1", "c2", "c3", "c4", "c5", "c6", "c7"];
   const minDate = new Date();
@@ -65,7 +65,12 @@ export default function Filters({ loading, onApplyFilters }: TFiltersProps) {
   // Set initial values from url
   useEffect(() => {
     if (query.categories) {
-      setSelectedCategories(query.categories.split(","));
+      const categoriesArray =
+        typeof query.categories === "string"
+          ? query.categories.split(",")
+          : query.categories;
+          
+      setSelectedCategories(categoriesArray);
     }
 
     if (query.startDate) {

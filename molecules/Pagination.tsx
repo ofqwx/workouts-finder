@@ -43,7 +43,7 @@ export default function Pagination({ pagination }: TPaginationProps) {
 
     const prevQueryString = createQueryString({
       ...query,
-      page: query.page && query.page > 1 ? Number(query.page) - 1 : 0,
+      page: query.page && Number(query.page) > 1 ? Number(query.page) - 1 : 0,
     });
 
     setNextUrl(`/?${nextQueryString}`);

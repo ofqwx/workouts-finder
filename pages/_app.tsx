@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import { ComponentType } from "react";
 import { Setup } from "../molecules";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 type TAppProps = {
-  Component: ReactNode;
+  Component: ComponentType;
   pageProps: any;
 };
 

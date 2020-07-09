@@ -2,7 +2,7 @@ import { Heading, CardList, Card } from "../atoms";
 import { TWorkout, TPagination } from "../data/Workout";
 import { Box, Flex } from "../grid";
 import Pagination from "./Pagination";
-import {useRouter} from 'next/router';
+import { useRouter } from "next/router";
 
 type TWorkoutsListProps = {
   loading: boolean;
@@ -27,7 +27,9 @@ export default function WorkoutsList({ loading, data }: TWorkoutsListProps) {
           {workouts.map((workout) => (
             <Card
               key={workout._id}
-              url={`/workout-details/${workout._id}?referrer=${encodeURIComponent(asPath)}`}
+              url={`/workout-details/${
+                workout._id
+              }?referrer=${encodeURIComponent(asPath)}`}
             >
               <Heading level={3} align="left">
                 {workout.name}
