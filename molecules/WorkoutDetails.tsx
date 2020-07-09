@@ -9,7 +9,7 @@ type TWorkoutDetailsProps = {
 
 export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
   const [workoutDetails, setWorkoutDetails] = useState<TWorkout>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getWorkoutDetails() {
