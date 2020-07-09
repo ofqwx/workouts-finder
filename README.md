@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Deployed version
 
-You can take a look at the demo here: 
+You can take a look at the demo here: https://workouts-finder.vercel.app/
 
 ### Running locally
 
