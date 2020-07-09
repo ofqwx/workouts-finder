@@ -12,8 +12,9 @@ export default async function workouts(
     const workout = new Workout();
 
     const query = req.body;
+    const queryObj = await JSON.parse(query);
 
-    const workouts = await workout.getWorkoutsList(query);
+    const workouts = await workout.getWorkoutsList(queryObj);
 
     res.status(200).json(workouts);
     dataSource.disconnect();

@@ -38,7 +38,7 @@ type TFilters = {
 
 type TQuery = {
   page: number;
-  category?: string;
+  categories?: string;
   startDate?: string;
 };
 
@@ -55,8 +55,7 @@ export default class Workout {
   }
 
   async getWorkoutsList(query: TQuery): Promise<TGetWorkoutsListResponse> {
-    const queryObj = JSON.parse(query);
-    const { page = 1, categories, startDate } = queryObj;
+    const { page = 1, categories, startDate } = query;
     const pageSize = 20;
     const skips = pageSize * (Number(page) - 1);
 

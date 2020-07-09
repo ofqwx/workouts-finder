@@ -14,7 +14,6 @@ type TWorkoutsListProps = {
 
 export default function WorkoutsList({ loading, data }: TWorkoutsListProps) {
   const { asPath } = useRouter();
-  console.log(asPath)
   const { workouts, pagination } = data;
 
   if (workouts?.length) {
