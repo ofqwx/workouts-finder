@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Heading } from "../atoms";
 import { Flex, Box } from "../grid";
 import { TWorkout } from "../data/Workout";
+import formatDate from '../transformers/formatDate';
 
 type TWorkoutDetailsProps = {
   id: string;
@@ -9,7 +10,7 @@ type TWorkoutDetailsProps = {
 
 export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
   const [workoutDetails, setWorkoutDetails] = useState<TWorkout>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function getWorkoutDetails() {
@@ -55,7 +56,7 @@ export default function WorkoutDetails({ id }: TWorkoutDetailsProps) {
               <Heading
                 level={3}
                 margin="0"
-              >{`Start date: ${workoutDetails.startDate}`}</Heading>
+              >{`Start date: ${formatDate(workoutDetails.startDate)}`}</Heading>
             </Box>
 
             <Box alignSelf="start">

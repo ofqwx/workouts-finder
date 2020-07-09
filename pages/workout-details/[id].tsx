@@ -12,7 +12,7 @@ export default function () {
       title="Workout detail"
       topBarLinks={
         <Link href={String(referrer) ?? "/"}>
-          <a>Workouts</a>
+          <a>Back to workouts</a>
         </Link>
       }
     >
