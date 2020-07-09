@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Node } from "react";
+import { ReactNode } from "react";
 
 const Wrapper = styled.div`
   height: ${props => props.height || ""};
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 `;
 
 type TBoxProps = {
-  children: Node;
+  children: ReactNode;
   height?: string;
   width?: string;
   margin?: string;

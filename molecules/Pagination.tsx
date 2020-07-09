@@ -3,7 +3,7 @@ import { Box, Flex } from "../grid";
 import { TPagination } from "../data/Workout";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Node } from "react";
+import { ReactNode } from "react";
 import createQueryString from "../transformers/createQueryString";
 
 type TPaginationProps = {
@@ -13,7 +13,7 @@ type TPaginationProps = {
 type TPaginationLinkProps = {
   disabled: boolean;
   url: string;
-  children: Node;
+  children: ReactNode;
 };
 
 function PaginationLink({ disabled, url, children }: TPaginationLinkProps) {

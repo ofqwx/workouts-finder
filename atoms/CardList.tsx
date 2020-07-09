@@ -12,7 +12,7 @@ const StyledBox = styled(Box)`
 `;
 
 type TCardListProps = {
-  children: Node;
+  children: ReactNode;
 }
 
 export default function CardList({children}: TCardListProps) {

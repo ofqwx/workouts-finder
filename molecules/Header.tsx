@@ -1,4 +1,4 @@
-import { Node } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import {Flex, Box} from '../grid';
 
@@ -8,7 +8,7 @@ const LogoWrapper = styled.div`
 `;
 
 type THeaderProps = {
-  children: Node;
+  children: ReactNode;
 };
 
 export default function Header({ children }: THeaderProps) {

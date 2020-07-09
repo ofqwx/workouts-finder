@@ -2,7 +2,7 @@ import { Fragment, Node } from "react";
 import AppStyles from "./AppStyles";
 
 type TSetupProps = {
-  children: Node;
+  children: ReactNode;
 };
 
 export default function Setup({ children }: TSetupProps) {

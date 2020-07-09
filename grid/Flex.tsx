@@ -1,4 +1,4 @@
-import { Node } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `;
 
 type TFlexProps = {
-  children: Node,
+  children: ReactNode,
   direction?: string,
   wrap?: string,
   alignItems?: string,

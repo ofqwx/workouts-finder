@@ -1,4 +1,4 @@
-import React, { Node } from "react";
+import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Flex, Box } from "../grid";
 import { Header } from "../molecules";
@@ -6,8 +6,8 @@ import { Footer } from "../molecules";
 
 type TLayoutProps = {
   title: string | Node;
-  topBarLinks?: Node;
-  children: Node;
+  topBarLinks?: ReactNode;
+  children: ReactNode;
 };
 
 export default function Layout({ title, topBarLinks, children }: TLayoutProps) {

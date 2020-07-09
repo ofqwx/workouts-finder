@@ -1,4 +1,4 @@
-import { Node } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { Box } from "../grid";
@@ -19,7 +19,7 @@ const Wrapper = styled(Box)`
 
 type TCardProps = {
   url?: string;
-  children: Node;
+  children: ReactNode;
 };
 
 export default function Card({ url, children }: TCardProps) {
