@@ -1,15 +1,11 @@
 import { Heading, CardList, Card } from "../atoms";
-import { TWorkout, TPagination } from "../data/Workout";
 import { Box, Flex } from "../grid";
 import Pagination from "./Pagination";
 import { useRouter } from "next/router";
 
 type TWorkoutsListProps = {
   loading: boolean;
-  data: {
-    workouts: TWorkout[];
-    pagination: TPagination;
-  };
+  data: any;
 };
 
 export default function WorkoutsList({ loading, data }: TWorkoutsListProps) {

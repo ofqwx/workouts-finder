@@ -7,7 +7,10 @@ import createQueryString from "../transformers/createQueryString";
 import { WorkoutsList } from ".";
 
 export default function WourkoutsFinder() {
-  const [workoutsListData, setWorkoutsListData] = useState();
+  const [workoutsListData, setWorkoutsListData] = useState({
+    workouts: [],
+    pagination: {},
+  });
   const [loading, setLoading] = useState(false);
   const { query } = useRouter();
 
@@ -41,7 +44,7 @@ export default function WourkoutsFinder() {
           </Box>
 
           <SearchBar
-            loading={loading && Boolean(workoutsListData)}
+            loading={loading && Boolean(workoutsListData.workouts?.length)}
           />
 
           <WorkoutsList loading={loading} data={workoutsListData} />
